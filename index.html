@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="password-gen.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Karla:ital,wght@0,200..800;1,200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div id="content">
+            <p id="header-text">Generate a<br><span class="colour-class">random password</span></p>
+            <p id="comment-text">Never use an insecure password again!</p>
+            <button id="action-btn">Generate passwords</button>
+            <div id="password-length">
+                <!-- <label for="password-length-input">Set password character length</label> -->
+                <select id="password-length-input" >
+                    <option value="" disabled selected>--set password character length</option>
+                    <option value="8">8 characters</option>
+                    <option value="9">9 characters</option>
+                    <option value="10">10 characters</option>
+                    <option value="11">11 characters</option>
+                    <option value="12">12 characters</option>
+                    <option value="13">13 characters</option>
+                    <option value="14">14 characters</option>
+                    <option value="15">15 characters</option>    
+                </select> 
+                <p id="empty-error-msg"></p>
+            </div>
+            
+            <div class="options-div">
+                <p class="options-text">Include Symbols</p>
+                <input type="checkbox" id="symbol-checkbox"> 
+            </div>
+            <div class="options-div">
+                <p class="options-text">Include Numbers</p>
+                <input type="checkbox" id="number-checkbox"> 
+            </div>
+            <div id="border-line"></div>
+            <div id="display-boxes">
+                <button id="display-box-one"></button>
+                <button id="display-box-two"></button>
+            </div>
+            <p id="footer">Click on password to copy.</p>
+
+        </div>
+        <script src="password-gen.js"></script>
+    </body>
+</html>
