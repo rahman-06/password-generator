@@ -44,17 +44,17 @@ numberCheckbox.addEventListener("change",(e)=>{
 })
 
 function characterGenerator(){
-    if (wantSymbols){
-        let randomNo = Math.floor(Math.random()*charactersMinusNumbers.length)
-        return charactersMinusNumbers[randomNo]
+    if (wantSymbols && wantNumbers){
+        let randomNo = Math.floor(Math.random()*characters.length)
+        return characters[randomNo]
     }
     else if (wantNumbers){
         let randomNo = Math.floor(Math.random()*charactersMinusSymbols.length)
         return charactersMinusSymbols[randomNo]
     }
-    else if (wantSymbols && wantNumbers){
-        let randomNo = Math.floor(Math.random()*characters.length)
-        return characters[randomNo]
+    else if (wantSymbols){
+        let randomNo = Math.floor(Math.random()*charactersMinusNumbers.length)
+        return charactersMinusNumbers[randomNo]
     }
     else{
         let randomNo = Math.floor(Math.random()*charactersMinusBoth.length)
@@ -93,14 +93,14 @@ function passwordGenerator(){
 
 
 function copy(txt){
-    navigator.clipboard.writeText(txt.textContent)
-    alert("Password Copied!")
-    console.log("copied")
+    if (passwordLength.value){
+        navigator.clipboard.writeText(txt.textContent)
+        alert("Password Copied!")
+        console.log("copied") 
+    }  
 }
 
 actionButton.addEventListener("click",passwordGenerator)
 displayBoxOne.addEventListener("click",() => copy(displayBoxOne))
 displayBoxTwo.addEventListener("click", () => copy(displayBoxTwo))
 
-// let passwordLength = document.querySelector("#password-length-input")
-// console.log(passwordLength.textContent)
