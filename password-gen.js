@@ -26,7 +26,6 @@ symbolCheckbox.addEventListener("change",(e)=>{
     if(e.target.checked){
         wantSymbols = true
         console.log("clicked Symbols")
-        console.log(passwordLength.value)
     }else{
         wantSymbols = false
         console.log("unclicked Symbols")
@@ -76,9 +75,9 @@ let displayBoxTwo = document.getElementById("display-box-two")
 let passwordLength = document.querySelector("#password-length-input")
 function passwordGenerator(){
     if (passwordLength.value){
-        for(let i=0; i<(passwordLength.value) ; i++){
-        passwordOne += characterGenerator()
-        passwordTwo += characterGenerator()
+        for(let i=0; i<(Number(passwordLength.value)) ; i++){
+            passwordOne += characterGenerator()
+            passwordTwo += characterGenerator()
     }
     
     displayBoxOne.textContent = passwordOne
